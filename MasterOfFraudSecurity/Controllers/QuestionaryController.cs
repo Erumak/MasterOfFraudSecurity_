@@ -32,6 +32,11 @@ namespace MasterOfFraudSecurity.Controllers
 
         public async Task<IHttpActionResult> Post(Questionary questionary)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             using (var repository = new Repository<Questionary>())
             {
                 await repository.AddAsync(questionary);

@@ -12,9 +12,10 @@ namespace MasterOfFraudSecurity.Entities
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MasterOfFraudSecurity", throwIfV1Schema: false)
         {
             Configuration.LazyLoadingEnabled = false;
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
         }
 
         public static ApplicationDbContext Create()

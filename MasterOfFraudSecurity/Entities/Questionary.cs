@@ -24,8 +24,8 @@ namespace MasterOfFraudSecurity.Entities
         public string FirstName { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Patronimic { get; set; }
-        public DateTime BirthDay { get; set; }
+        public string Patronymic { get; set; }
+        public DateTime BirthDate { get; set; }
         [Required]
         [MaxLength(12)]
         public string MobilePhone { get; set; }

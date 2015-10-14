@@ -1,0 +1,8 @@
+﻿<form ng-submit="vm.onSubmit()">
+    <formly-form model="vm.questionary" fields="vm.questionaryFields">
+        <button type="submit" class="btn btn-default">Submit</button>
+        <span style="color:red" ng-show="vm.loading">Loading...</span>
+        <span style="color:green" ng-show="vm.success">Form successfully posted.</span>
+        <span style="color:red" ng-show="vm.failure">Unknown error.</span>
+    </formly-form>
+</form>
