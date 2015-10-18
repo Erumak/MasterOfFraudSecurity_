@@ -29,6 +29,13 @@
             templateUrl: "/app/views/questionary.html"
         });
 
+        $stateProvider.state("allQuestionaries", {
+            url: "/allQuestionaries",
+            controller: "allQuestionariesController",
+            controllerAs: "vm",
+            templateUrl: "/app/views/allQuestionaries.html"
+        });
+
         $stateProvider.state("home", {
             url: "/home",
             templateUrl: "/app/views/home.html"

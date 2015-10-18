@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using MasterOfFraudSecurity.Code;
 using MasterOfFraudSecurity.Entities;
+using MasterOfFraudSecurity.Models;
 
 namespace MasterOfFraudSecurity.Controllers
 {
@@ -26,7 +27,13 @@ namespace MasterOfFraudSecurity.Controllers
                     return NotFound();
                 }
 
-                return Ok(questionary);
+                var questionaryExtended = new QuestionaryExtendedDto
+                {
+                    Questionary = questionary,
+                    MatchingFieldsCamelCase = new string[] {}
+                };
+
+                return Ok(questionaryExtended);
             }
         }
 

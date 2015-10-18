@@ -1,0 +1,7 @@
+﻿<div>
+    <ul>
+        <li ng-repeat="questionary in vm.questionaries | orderBy:'createdOn':true">
+            <a>{{vm.getFullName(questionary)}}</a>
+        </li>
+    </ul>
+</div>
