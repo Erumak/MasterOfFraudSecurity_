@@ -6,9 +6,9 @@ using MasterOfFraudSecurity.Entities;
 
 namespace MasterOfFraudSecurity.Models
 {
-    public class QuestionaryExtendedDto
+    public class QuestionaryExtended
     {
         public Questionary Questionary { get; set; }
-        public ICollection<string> MatchingFieldsCamelCase { get; set; } 
+        public ICollection<MatchingField> MatchingFields { get; set; } 
     }
 }

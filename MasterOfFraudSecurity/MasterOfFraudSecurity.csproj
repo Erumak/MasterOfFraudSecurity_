@@ -216,7 +216,9 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\QuestionaryExtendedDto.cs" />
+    <Compile Include="Models\MatchingField.cs" />
+    <Compile Include="Models\QuestionaryDisplayDto.cs" />
+    <Compile Include="Models\QuestionaryExtended.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -226,9 +228,12 @@
     <Content Include="app\app.js" />
     <Content Include="app\controllers\allQuestionariesController.js" />
     <Content Include="app\controllers\questionaryController.js" />
+    <Content Include="app\controllers\viewQuestionaryController.js" />
+    <Content Include="app\services\questionaryService.js" />
     <Content Include="app\views\allQuestionaries.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\questionary.html" />
+    <Content Include="app\views\viewQuestionary.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -271,6 +276,8 @@
     <Content Include="Scripts\formly.js" />
     <Content Include="Scripts\formly.min.js" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Scripts\underscore.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -291,6 +298,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <Content Include="Scripts\underscore-min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

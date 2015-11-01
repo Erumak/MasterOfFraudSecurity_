@@ -30,10 +30,25 @@
         });
 
         $stateProvider.state("allQuestionaries", {
-            url: "/allQuestionaries",
+            url: "/all",
             controller: "allQuestionariesController",
             controllerAs: "vm",
             templateUrl: "/app/views/allQuestionaries.html"
+        });
+
+        //TODO: add route with resolve with stateParams
+        $stateProvider.state("viewQuestionary", {
+            url: "/view/:id",
+            controller: "viewQuestionaryController",
+            controllerAs: "vm",
+            templateUrl: "/app/views/viewQuestionary.html",
+            resolve: {
+                questionaryExtended: [
+                    "$http", "$stateParams", function($http, $stateParams) {
+                        return $http.get("api/questionary/" + $stateParams.id);
+                    }
+                ]
+            }
         });
 
         $stateProvider.state("home", {

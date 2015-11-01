@@ -32,7 +32,7 @@ namespace MasterOfFraudSecurity.Entities
         [EmailAddress]
         [Required]
         [MaxLength(50)]
-        public string Email { get; set; }
+        public string Email { get; set; } 
         [Required]
         [MaxLength(2)]
         [MinLength(2)]

@@ -1,7 +1,18 @@
-﻿<div>
+﻿<div style="float: left; margin-right: 200px">
+    All questionaries:
     <ul>
         <li ng-repeat="questionary in vm.questionaries | orderBy:'createdOn':true">
-            <a>{{vm.getFullName(questionary)}}</a>
+            <a ng-href="/#view/{{questionary.id}}">{{vm.getFullName(questionary)}}</a>
         </li>
     </ul>
 </div>
+<div>
+    Suspicious questionaries:
+    <ul>
+        <li ng-repeat="questionary in vm.suspiciousQuestionaries | orderBy:'createdOn':true">
+            <a ng-href="/#view/{{questionary.id}}">{{vm.getFullName(questionary)}}</a>
+        </li>
+    </ul>
+</div>
+<br/>
+<a ng-href="/#questionary">Add questionary</a>

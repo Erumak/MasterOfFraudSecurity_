@@ -17,6 +17,16 @@ namespace MasterOfFraudSecurity.Controllers
             }
         }
 
+        [Route("api/questionary/suspicious")]
+        [HttpGet]
+        public async Task<Questionary[]> GetSuspicious()
+        {
+            using (var repository = new Repository<Questionary>())
+            {
+                return await new QuestionaryMatchingFieldService(repository).GetSuspiciousQuestionariesAsync();
+            }
+        }
+
         public async Task<IHttpActionResult> Get(int id)
         {
             using (var repository = new Repository<Questionary>())
@@ -27,10 +37,11 @@ namespace MasterOfFraudSecurity.Controllers
                     return NotFound();
                 }
 
-                var questionaryExtended = new QuestionaryExtendedDto
+                var questionaryExtended = new QuestionaryExtended
                 {
                     Questionary = questionary,
-                    MatchingFieldsCamelCase = new string[] {}
+                    MatchingFields =
+                        await new QuestionaryMatchingFieldService(repository).GetMatchingQuestionariesAsync(questionary)
                 };
 
                 return Ok(questionaryExtended);

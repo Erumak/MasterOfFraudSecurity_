@@ -1,0 +1,18 @@
+﻿<table style="margin: 20px 0">
+    <thead><tr><th>Field</th><th>Value</th><th>Matchings</th></tr></thead>
+    <tbody>
+        <tr ng-repeat="(key, value) in vm.questionaryExtended.questionary">
+            <td style="margin-right: 29px"> {{ key }}:&nbsp;&nbsp;</td>
+            <td> {{ value }} </td>
+            <td style="vertical-align:bottom">
+                <div ng-show="vm.hasMatches(key)">
+                    <!--<a ng-click="vm.expandMatches()">Matches</a>-->
+                    <div ng-repeat="q in vm.getMatches(key)">
+                        <a ng-href="/#view/{{q.id}}">{{q.displayName}}</a><br />
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a ng-href="/#all">All</a>
