@@ -4,6 +4,7 @@ using System.Web.Http;
 using MasterOfFraudSecurity.Code;
 using MasterOfFraudSecurity.Entities;
 using MasterOfFraudSecurity.Models;
+using MasterOfFraudSecurity.Results;
 
 namespace MasterOfFraudSecurity.Controllers
 {
@@ -24,6 +25,28 @@ namespace MasterOfFraudSecurity.Controllers
             using (var repository = new Repository<Questionary>())
             {
                 return await new QuestionaryMatchingFieldService(repository).GetSuspiciousQuestionariesAsync();
+            }
+        }
+
+        [Route("api/questionary/excelAll")]
+        [HttpGet]
+        public async Task<IHttpActionResult> ExcelDownloadAll()
+        {
+            using (var repository = new Repository<Questionary>())
+            {
+                var data = await repository.GetAll().ToArrayAsync();
+                return new QuestionaryExcelFileActionResult(data, "all.xlsx");
+            }
+        }
+
+        [Route("api/questionary/excelSuspicious")]
+        [HttpGet]
+        public async Task<IHttpActionResult> ExcelDownloadSuspicious()
+        {
+            using (var repository = new Repository<Questionary>())
+            {
+                var data = await new QuestionaryMatchingFieldService(repository).GetSuspiciousQuestionariesAsync();
+                return new QuestionaryExcelFileActionResult(data, "suspicious.xlsx");
             }
         }
 
