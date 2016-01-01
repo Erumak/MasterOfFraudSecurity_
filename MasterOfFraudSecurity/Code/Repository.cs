@@ -25,12 +25,22 @@ namespace MasterOfFraudSecurity.Code
             return entities;
         }
 
-        public async Task AddAsync(T entity)
+        public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
-            await _context.SaveChangesAsync();
         }
-        
+
+        public void DeleteAll()
+        {
+            var dbSet = _context.Set<T>();
+            dbSet.RemoveRange(dbSet);            
+        }
+
+        public Task SaveChangesAsync()
+        {
+            return _context.SaveChangesAsync();
+        }
+
         public void Dispose()
         {
             _context.Dispose();

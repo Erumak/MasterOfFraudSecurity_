@@ -234,8 +234,10 @@
     <Content Include="app\controllers\allQuestionariesController.js" />
     <Content Include="app\controllers\questionaryController.js" />
     <Content Include="app\controllers\viewQuestionaryController.js" />
+    <Content Include="app\directives\fileUploadDirective.js" />
     <Content Include="app\services\questionaryService.js" />
     <Content Include="app\views\allQuestionaries.html" />
+    <Content Include="app\views\fileUpload.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\questionary.html" />
     <Content Include="app\views\viewQuestionary.html" />
@@ -281,6 +283,8 @@
     <Content Include="Scripts\formly.js" />
     <Content Include="Scripts\formly.min.js" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\ng-file-upload.js" />
+    <Content Include="Scripts\ng-file-upload.min.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Web.config">

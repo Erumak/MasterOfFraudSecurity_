@@ -2,7 +2,7 @@
     'use strict';
 
     var app = angular.module('MasterOfFraudSecurity', [
-        'ui.router', 'formly', 'formlyBootstrap']);
+        'ui.router', 'formly', 'formlyBootstrap', 'ngFileUpload']);
 
     app.config(configRoutes);
     app.run(appRun);

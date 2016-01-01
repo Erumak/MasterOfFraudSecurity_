@@ -1,0 +1,17 @@
+﻿<div>
+    Upload data in excel format.
+    <button ngf-select="vm.uploadFiles($file, $invalidFiles)" accept=".xlsx">
+        Select File
+    </button>
+    <br><br>
+    <span style="color:red" ng-show="vm.loading">Loading...</span>
+    <span style="color:green" ng-show="vm.success">File successfully imported.</span>
+    <span style="color:red" ng-show="vm.error">{{vm.errorMsg}}</span>
+    <div style="font: smaller" ng-show="vm.loading">
+        {{vm.f.name}} {{vm.errFile.name}} {{vm.errFile.$error}} {{vm.errFile.$errorParam}}
+        <span class="progress" ng-show="vm.f.progress >= 0">
+            <div style="width: { {vm.f.progress}}% "
+                 ng-bind="vm.f.progress + '%'"></div>
+        </span>
+    </div>    
+</div>

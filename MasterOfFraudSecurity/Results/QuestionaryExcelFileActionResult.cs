@@ -11,7 +11,6 @@ using System.Web;
 using System.Web.Http;
 using MasterOfFraudSecurity.Entities;
 using OfficeOpenXml;
-using OfficeOpenXml.Table;
 
 namespace MasterOfFraudSecurity.Results
 {
