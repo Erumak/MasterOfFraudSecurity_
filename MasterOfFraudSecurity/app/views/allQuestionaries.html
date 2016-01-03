@@ -6,7 +6,7 @@
         </li>
     </ul>
 </div>
-<div>
+<div style="float: left;">
     Suspicious questionaries:
     <ul>
         <li ng-repeat="questionary in vm.suspiciousQuestionaries | orderBy:'createdOn':true">
@@ -16,8 +16,12 @@
 </div>
 <br/>
 <br />
-<a ng-href="/api/questionary/excelall">Download all</a>
-<br />
-<a ng-href="/api/questionary/excelsuspicious">Download suspicious</a>
-<br />
-<a ng-href="/#questionary">Add questionary</a>
+<div style="clear: both;">
+    <a ng-href="/api/questionary/excelall">Download all</a>
+    <br />
+    <a ng-href="/api/questionary/excelsuspicious">Download suspicious</a>
+    <br />
+    <a ng-href="/#questionary">Add questionary</a>
+    <br />
+    <a ng-href="/#home">Home</a>
+</div>

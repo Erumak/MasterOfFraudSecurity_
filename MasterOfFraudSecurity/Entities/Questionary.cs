@@ -43,7 +43,6 @@ namespace MasterOfFraudSecurity.Entities
         public string PassportNumber { get; set; }
         [Required]
         [MaxLength(10)]
-        [MinLength(10)]
         public string IINPhysic { get; set; }
         public string PassportIssued { get; set; }
         public string AddressLocation { get; set; }
